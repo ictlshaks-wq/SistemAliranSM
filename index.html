@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Penentuan Aliran STEM - JPN PAHANG</title>
+    <title>Sistem Penentuan Aliran Menengah Atas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -22,7 +22,9 @@
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Penambahan ketebalan border apabila di-klik */
         .subject-checkbox:checked + .tile-content {
+            border-width: 4px !important;
             border-color: currentColor;
             background-color: rgba(var(--bg-rgb), 0.1);
             transform: translateY(-3px);
@@ -57,7 +59,7 @@
 </head>
 <body class="min-h-screen pb-20">
 
-    <!-- Header Section -->
+    <!-- Bahagian Pengepala (Header) -->
     <header class="bg-[#003366] text-white pt-16 pb-32 px-6 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -73,16 +75,16 @@
                     <span class="text-yellow-400 font-black tracking-[0.2em] text-sm uppercase block mb-1">
                         JABATAN PENDIDIKAN NEGERI PAHANG
                     </span>
-                    <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">
-                        SISTEM PENENTUAN ALIRAN <br>
-                        <span class="text-yellow-400">STEM MENENGAH ATAS</span>
+                    <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight uppercase">
+                        Sistem Penentuan Aliran <br>
+                        <span class="text-yellow-400">Menengah Atas</span>
                     </h1>
                 </div>
             </div>
             
-            <!-- Tab Navigation -->
+            <!-- Navigasi Tab -->
             <div class="flex gap-2 mt-8 justify-center md:justify-start">
-                <button onclick="switchView('calculator')" id="tab-calculator" class="px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400/30 transition-all active-tab">
+                <button onclick="switchView('calculator')" id="tab-calculator" class="px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400/30 transition-all active-tab shadow-lg">
                     KALKULATOR
                 </button>
                 <button onclick="switchView('guide')" id="tab-guide" class="px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400/30 transition-all text-yellow-400 hover:bg-yellow-400/10">
@@ -92,14 +94,14 @@
         </div>
     </header>
 
-    <!-- Main Content Container -->
+    <!-- Bekas Kandungan Utama -->
     <main class="max-w-7xl mx-auto px-6 -mt-16 relative z-20">
         
-        <!-- CALCULATOR VIEW -->
+        <!-- PAPARAN KALKULATOR -->
         <div id="view-calculator" class="flex flex-col lg:flex-row gap-8 animate-slide-up">
-            <!-- Left Side: Interactive Selection -->
+            <!-- Bahagian Kiri: Pemilihan Interaktif -->
             <div class="flex-1 space-y-10">
-                <!-- Mandatory Section Card -->
+                <!-- Kad Subjek Wajib -->
                 <div class="bg-white p-8 rounded-[2.5rem] border-t-8 border-yellow-400 shadow-2xl">
                     <div class="flex items-center gap-3 mb-6">
                         <i data-lucide="award" class="w-6 h-6 text-yellow-500"></i>
@@ -121,7 +123,7 @@
                     </div>
                 </div>
 
-                <!-- Pure Science Group -->
+                <!-- Kumpulan Sains Tulen -->
                 <section class="space-y-6">
                     <div class="flex items-center gap-4">
                         <div class="p-3 bg-emerald-600 text-white rounded-2xl shadow-lg shadow-emerald-200">
@@ -132,7 +134,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <label class="relative cursor-pointer group">
                             <input type="checkbox" value="Biologi" class="peer hidden subject-checkbox" onchange="calculatePackage()">
-                            <div class="tile-content p-6 bg-white border-2 border-slate-200 rounded-[2rem] flex items-center gap-5 transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 shadow-sm hover:shadow-md">
+                            <div class="tile-content p-6 bg-white border-2 border-slate-100 rounded-[2rem] flex items-center gap-5 transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 shadow-sm hover:shadow-md">
                                 <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-700 peer-checked:bg-emerald-600 peer-checked:text-white transition-all">
                                     <i data-lucide="microscope" class="w-6 h-6"></i>
                                 </div>
@@ -141,7 +143,7 @@
                         </label>
                         <label class="relative cursor-pointer group">
                             <input type="checkbox" value="Fizik" class="peer hidden subject-checkbox" onchange="calculatePackage()">
-                            <div class="tile-content p-6 bg-white border-2 border-slate-200 rounded-[2rem] flex items-center gap-5 transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 shadow-sm hover:shadow-md">
+                            <div class="tile-content p-6 bg-white border-2 border-slate-100 rounded-[2rem] flex items-center gap-5 transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 shadow-sm hover:shadow-md">
                                 <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-700 peer-checked:bg-emerald-600 peer-checked:text-white transition-all">
                                     <i data-lucide="zap" class="w-6 h-6"></i>
                                 </div>
@@ -150,7 +152,7 @@
                         </label>
                         <label class="relative cursor-pointer group">
                             <input type="checkbox" value="Kimia" class="peer hidden subject-checkbox" onchange="calculatePackage()">
-                            <div class="tile-content p-6 bg-white border-2 border-slate-200 rounded-[2rem] flex items-center gap-5 transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 shadow-sm hover:shadow-md">
+                            <div class="tile-content p-6 bg-white border-2 border-slate-100 rounded-[2rem] flex items-center gap-5 transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 shadow-sm hover:shadow-md">
                                 <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-700 peer-checked:bg-emerald-600 peer-checked:text-white transition-all">
                                     <i data-lucide="droplets" class="w-6 h-6"></i>
                                 </div>
@@ -159,7 +161,8 @@
                         </label>
                         <label class="relative cursor-pointer group">
                             <input type="checkbox" value="AddMath" class="peer hidden subject-checkbox" onchange="calculatePackage()">
-                            <div class="tile-content p-6 bg-white border-4 border-yellow-400 rounded-[2rem] flex items-center gap-5 transition-all peer-checked:border-yellow-600 peer-checked:bg-yellow-50 shadow-xl mandatory-glow">
+                            <!-- Diubah daripada border-4 kepada border-2 supaya tidak tebal sebelum klik -->
+                            <div class="tile-content p-6 bg-white border-2 border-yellow-400 rounded-[2rem] flex items-center gap-5 transition-all peer-checked:border-yellow-600 peer-checked:bg-yellow-50 shadow-xl mandatory-glow">
                                 <div class="w-12 h-12 bg-yellow-400 rounded-2xl flex items-center justify-center text-[#003366]">
                                     <i data-lucide="sigma" class="w-6 h-6"></i>
                                 </div>
@@ -172,7 +175,7 @@
                     </div>
                 </section>
 
-                <!-- C1: Technical -->
+                <!-- C1: Teknikal -->
                 <section class="space-y-6">
                     <div class="flex items-center gap-4">
                         <div class="p-3 bg-blue-600 text-white rounded-2xl shadow-lg">
@@ -183,7 +186,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="c1-list"></div>
                 </section>
 
-                <!-- C2: Vocational -->
+                <!-- C2: Vokasional -->
                 <section class="space-y-6">
                     <div class="flex items-center gap-4">
                         <div class="p-3 bg-purple-600 text-white rounded-2xl shadow-lg">
@@ -206,7 +209,7 @@
                 </section>
             </div>
 
-            <!-- Right Side: Analysis Dashboard -->
+            <!-- Bahagian Kanan: Papan Pemuka Analisis -->
             <div class="lg:w-[420px]">
                 <div class="sticky top-6 space-y-6">
                     <div id="result-container" class="bg-white p-10 rounded-[3.5rem] border-2 border-slate-100 shadow-[0_40px_70px_-15px_rgba(0,51,102,0.15)] text-center relative overflow-hidden transition-all duration-700">
@@ -233,6 +236,7 @@
                         <i data-lucide="trash-2" class="w-5 h-5 text-yellow-400"></i>
                         RESET PILIHAN
                     </button>
+                    <!-- Kotak Kuning Penghargaan -->
                     <div class="bg-yellow-400 p-6 rounded-[2.5rem] shadow-xl text-center border-b-8 border-yellow-600">
                          <p class="text-[10px] text-[#003366] font-black uppercase tracking-widest leading-relaxed">
                             APLIKASI INI DIBANGUNKAN OLEH UNIT TMK, SEKTOR PEMBELAJARAN, JPN PAHANG
@@ -242,7 +246,7 @@
             </div>
         </div>
 
-        <!-- GUIDE VIEW -->
+        <!-- PAPARAN PANDUAN -->
         <div id="view-guide" class="hidden animate-slide-up space-y-8">
             <div class="bg-white p-10 rounded-[3rem] shadow-2xl border-t-8 border-yellow-400">
                 <h2 class="text-3xl font-black text-[#003366] mb-8 flex items-center gap-3">
@@ -322,7 +326,7 @@
     </main>
 
     <script>
-        // Data Lists
+        // Senarai Data Elektif
         const c1Subjects = ["Sains Tambahan", "Grafik Komunikasi Teknikal", "Asas Kelestarian", "Pertanian", "Sains Rumah Tangga", "Reka Cipta", "Sains Komputer", "Sains Sukan", "Pengajian Kejuruteraan Awam", "Pengajian Kejuruteraan Mekanikal", "Pengajian Kejuruteraan Elektrik & Elektronik", "Lukisan Kejuruteraan"];
         const c2Subjects = ["Produksi Reka Tanda", "Hiasan Dalaman", "Kerja Paip Domestik", "Pembinaan Domestik", "Pembuatan Perabot", "Reka Bentuk Grafik Digital", "Produksi Multimedia", "Katering dan Penyajian", "Pemprosesan Makanan", "Rekaan dan Jahitan Pakaian", "Penjagaan Muka dan Penggayaan Rambut", "Asuhan dan Pendidikan Awal Kanak-Kanak", "Gerontologi Asas dan Geriatrik", "Pendawaian Domestik", "Menservis Peralatan Elektrik Domestik", "Menservis Automobil", "Kimpalan Arka dan Gas", "Menservis Motosikal", "Menservis Peralatan Penyejukan dan Penyaman Udara", "Landskap dan Nurseri", "Tanaman Makanan", "Akuakultur dan Haiwan Rekreasi"];
         const ksiSubjects = ["Ekonomi", "Perniagaan", "Prinsip Perakaunan", "Geografi", "Pendidikan Seni Visual", "Pendidikan Muzik", "Tasawur Islam", "Pendidikan Al-Quran & As-Sunnah", "Pendidikan Syariah Islamiah", "Usul Al-Din", "Al-Syariah", "Bahasa Arab", "Bible Knowledge", "Kesusasteraan Melayu Komunikatif", "Kesusasteraan Inggeris", "Pengajian Keusahawanan", "Seni Halus 2D", "Seni Halus 3D", "Muzik Komputer", "Penulisan Skrip", "Bahasa Cina", "Bahasa Tamil"];
@@ -342,6 +346,7 @@
             return `<label class="relative cursor-pointer group"><input type="checkbox" value="${name}" data-type="${type}" class="peer hidden subject-checkbox" onchange="calculatePackage()"><div class="tile-content p-5 bg-white border-2 border-slate-100 rounded-[1.5rem] flex items-center justify-between transition-all ${themes[color]} hover:border-slate-300"><span class="text-sm font-bold text-slate-700">${name}</span><div class="w-6 h-6 border-2 border-slate-200 rounded-lg flex items-center justify-center peer-checked:bg-current transition-all"><i data-lucide="check" class="w-4 h-4 text-white"></i></div></div></label>`;
         }
 
+        // Fungsi Menukar Tab Paparan
         function switchView(view) {
             const calcView = document.getElementById('view-calculator');
             const guideView = document.getElementById('view-guide');
@@ -351,16 +356,17 @@
             if (view === 'calculator') {
                 calcView.classList.remove('hidden');
                 guideView.classList.add('hidden');
-                tabCalc.className = "px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400 transition-all active-tab";
+                tabCalc.className = "px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400 transition-all active-tab shadow-lg";
                 tabGuide.className = "px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400/30 transition-all text-yellow-400 hover:bg-yellow-400/10";
             } else {
                 calcView.classList.add('hidden');
                 guideView.classList.remove('hidden');
-                tabGuide.className = "px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400 transition-all active-tab";
+                tabGuide.className = "px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400 transition-all active-tab shadow-lg";
                 tabCalc.className = "px-6 py-3 rounded-full text-sm font-bold border-2 border-yellow-400/30 transition-all text-yellow-400 hover:bg-yellow-400/10";
             }
         }
 
+        // Logik Kiraan Pakej
         function calculatePackage() {
             const checkboxes = document.querySelectorAll('.subject-checkbox');
             const selected = Array.from(checkboxes).filter(cb => cb.checked);
@@ -377,6 +383,7 @@
                 lucide.createIcons();
             } else { summary.classList.add('hidden'); }
 
+            // Logik Algoritma Berasaskan SPI 6/2019
             if (pureScienceCount === 3 && hasAddMath) { updateUI('STEM A', 'Sains Tulen', 'emerald', 'MENGAMBIL SEMUA MATA PELAJARAN: Biologi, Fizik, Kimia DAN Matematik Tambahan.', 'microscope'); }
             else if (pureScienceCount >= 2 && hasAddMath) { updateUI('STEM B', 'Sains Gunaan', 'blue', 'MENGAMBIL DUA (2) MATA PELAJARAN: Sains Tulen DAN Matematik Tambahan DAN sekurang-kurangnya satu (1) elektif lain.', 'cpu'); }
             else if (c1Count >= 2 || c2Count >= 1) { const badge = c1Count >= 2 ? 'STEM C1' : 'STEM C2'; updateUI(badge, 'Teknikal & Vokasional', 'purple', 'Mengambil sekurang-kurangnya dua (2) subjek teknik (C1) atau satu (1) subjek vokasional (C2).', 'wrench'); }
@@ -387,6 +394,7 @@
             } else { resetUI(); }
         }
 
+        // Fungsi Kemaskini UI Keputusan
         function updateUI(name, badge, color, desc, icon) {
             const container = document.getElementById('result-container'), rName = document.getElementById('result-name'), rDesc = document.getElementById('result-desc'), rBadge = document.getElementById('result-badge'), rIconBox = document.getElementById('result-icon-box'), glow = document.getElementById('result-glow');
             const palettes = {
@@ -408,6 +416,7 @@
             lucide.createIcons();
         }
 
+        // Fungsi Set Semula (Reset)
         function resetUI() {
             const container = document.getElementById('result-container');
             container.className = "bg-white p-10 rounded-[3.5rem] border-2 border-slate-100 shadow-[0_40px_70px_-15px_rgba(0,51,102,0.15)] text-center relative overflow-hidden transition-all duration-700";
